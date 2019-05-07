@@ -1,5 +1,4 @@
 # fds_javascript
-
-PoiemaWeb의 내용을 정리한 것이다.
+javascript 강의 내용, poiemaweb 정리
 
 https://poiemaweb.com/
