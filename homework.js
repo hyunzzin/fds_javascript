@@ -6,19 +6,19 @@
 // // 변수 x가 10보다 크고 20보다 작을 때 변수 x를 출력하는 조건식을 완성하라.
 
 
-// if (x > 10 && x < 20) {
-//   console.log(x);
-// }
+if (x > 10 && x < 20) {
+  console.log(x);
+}
 
 
 // // #2. for문을 사용하여 0부터 10미만의 정수 중에서 짝수만을 작은 수부터 출력하시오.
 
 
-// for (let i = 0; i < 10; i++) {
-//   if (i % 2 == 0) {
-//     console.log(i);
-//   }
-// }
+for (let i = 0; i < 10; i++) {
+  if (i % 2 == 0) {
+    console.log(i);
+  }
+}
 
 
 // 0
@@ -29,109 +29,117 @@
 // #3. for문을 사용하여 0부터 10미만의 정수 중에서 짝수만을 작은 수부터 문자열로 출력하시오.
 
 
-// for (let i = 0; i < 10; i++) {
-//   if (i % 2 == 0) {
-//     console.log(i + '');
-//   }
-// }
+for (let i = 0; i < 10; i++) {
+  if (i % 2 == 0) {
+    console.log(i + '');
+  }
+}
 
 
 // 02468
+
 // #4. for문을 사용하여 0부터 10미만의 정수 중에서 홀수만을 큰수부터 출력하시오.
 
-// for (let i = 9; i >= 0; i--) {
-//   if (i % 2 == 1) {
-//     console.log(i);
-//   }
-// }
+for (let i = 9; i >= 0; i--) {
+  if (i % 2 == 1) {
+    console.log(i);
+  }
+}
 
 // 9
 // 7
 // 5
 // 3
 // 1
+
 // #5. while문을 사용하여 0 부터 10 미만의 정수 중에서 짝수만을 작은 수부터 출력하시오.
-// let i = 0;
-// while (i < 10) {
-//   if (i % 2 == 0) {
-//     console.log(i);
-//   }
-//   i = i + 1;
-// }
+let i = 0;
+while (i < 10) {
+  if (i % 2 == 0) {
+    console.log(i);
+  }
+  i = i + 1;
+}
 
 // 0
 // 2
 // 4
 // 6
 // 8
+
 // #6. while문을 사용하여 0 부터 10 미만의 정수 중에서 홀수만을 큰수부터 출력하시오.
 
-// let i = 9;
-// while (i >= 0) {
-//   if (i % 2 == 1) {
-//     console.log(i);
-//   }
-//   i = i - 1;
-// }
+let i = 9;
+while (i >= 0) {
+  if (i % 2 == 1) {
+    console.log(i);
+  }
+  i = i - 1;
+}
 
 // 9
 // 7
 // 5
 // 3
 // 1
+
 // #7. for 문을 사용하여 0부터 10미만의 정수의 합을 출력하시오.
-// let sum = 0;
-// for (let i = 0; i < 10; i++) {
-//   sum = sum + i;
-// }
-// console.log(sum);
+let sum = 0;
+for (let i = 0; i < 10; i++) {
+  sum = sum + i;
+}
+console.log(sum);
 
 // 45
+
 // #8. 1부터 20 미만의 정수 중에서 2 또는 3의 배수가 아닌 수의 총합을 구하시오.
-// let sum = 0;
-// for (let i = 1; i < 20; i++) {
-//   if (i % 2 !== 0 && i % 3 !== 0) {
-//     sum = sum + i;
-//   }
-// }
-// console.log(sum);
+let sum = 0;
+for (let i = 1; i < 20; i++) {
+  if (i % 2 !== 0 && i % 3 !== 0) {
+    sum = sum + i;
+  }
+}
+console.log(sum);
 
 // 73
+
 // #9. 1부터 20 미만의 정수 중에서 2 또는 3의 배수인 수의 총합을 구하시오.
-// let sum = 0;
-// for (let i = 1; i < 20; i++) {
-//   if (i % 2 === 0 || i % 3 === 0) {
-//     sum = sum + i;
-//   }
-// }
-// console.log(sum);
+let sum = 0;
+for (let i = 1; i < 20; i++) {
+  if (i % 2 === 0 || i % 3 === 0) {
+    sum = sum + i;
+  }
+}
+console.log(sum);
 
 // 117
+
 // #10. 두 개의 주사위를 던졌을 때, 눈의 합이 6이 되는 모든 경우의 수를 출력하시오.
 
-// for (let i = 1; i < 7; i++) {
-//   for (let j = 1; j < 7; j++) {
-//     if (i + j == 6) {
-//       console.log([i, j]);
-//     }
-//   }
-// }
+for (let i = 1; i < 7; i++) {
+  for (let j = 1; j < 7; j++) {
+    if (i + j == 6) {
+      console.log([i, j]);
+    }
+  }
+}
 
 // [ 1, 5 ]
 // [ 2, 4 ]
 // [ 3, 3 ]
 // [ 4, 2 ]
 // [ 5, 1 ]
+
 // #11. 삼각형 출력하기 - pattern 1
 // 다음을 참고하여 *(별)로 높이가 5인(var line = 5) 삼각형을 문자열로 완성하라. 개행문자(‘\n’)를 사용하여 개행한다. 완성된 문자열의 마지막은 개행문자(‘\n’)로 끝나도 관계없다.
-// let star = '';
-// for (let i = 1; i < 6; i++) {
-//   for (let j = 1; j <= i; j++) {
-//     star += '*';
-//   }
-//   star += '\n';
-// }
-// console.log(star);
+let star = '';
+for (let i = 1; i < 6; i++) {
+  for (let j = 1; j <= i; j++) {
+    star += '*';
+  }
+  star += '\n';
+}
+console.log(star);
 
 // // 높이(line)가 5
 // *
@@ -139,72 +147,54 @@
 // ***
 // ****
 // *****
+
 // #12. 삼각형 출력하기 - pattern 2
 // 다음을 참고하여 *(별)로 트리를 문자열로 완성하라. 개행문자(‘\n’)를 사용하여 개행한다. 완성된 문자열의 마지막은 개행문자(‘\n’)로 끝나도 관계없다.
 
-// let star = '';
-// for (let i = 1; i < 6; i++) {
-//   for (let j = 1; j < 6; j++) {
-//     if (j >= i) {
-//       star += '*'
-//     } else {
-//       star += ' ';
-//     }
+let star = '';
+for (let i = 1; i < 6; i++) {
+  for (let j = 1; j < 6; j++) {
+    if (j >= i) {
+      star += '*'
+    } else {
+      star += ' ';
+    }
 
-//   }
-//   star += '\n';
-// }
-// console.log(star);
+  }
+  star += '\n';
+}
+console.log(star);
 
 // *****
 //  ****
 //   ***
 //    **
 //     *
+
 // #13. 삼각형 출력하기 - pattern 3
 // 다음을 참고하여 *(별)로 트리를 문자열로 완성하라. 개행문자(‘\n’)를 사용하여 개행한다. 완성된 문자열의 마지막은 개행문자(‘\n’)로 끝나도 관계없다.
 
-// let star = '';
-// for (let i = 1; i < 6; i++) {
-//   for (let j = 5; j >= i; j--) {
-//     star += '*';
-//   }
-//   star += '\n';
-// }
-// console.log(star);
+let star = '';
+for (let i = 1; i < 6; i++) {
+  for (let j = 5; j >= i; j--) {
+    star += '*';
+  }
+  star += '\n';
+}
+console.log(star);
 
 // *****
 // ****
 // ***
 // **
 // *
+
 // #14. 삼각형 출력하기 - pattern 4
 // 다음을 참고하여 *(별)로 트리를 문자열로 완성하라. 개행문자(‘\n’)를 사용하여 개행한다. 완성된 문자열의 마지막은 개행문자(‘\n’)로 끝나도 관계없다.
 
-// let star = '';
-// for (let i = 1; i < 6; i++) {
-//   for (let j = 5; j > 0; j--) {
-//     if (j <= i) {
-//       star += '*'
-//     } else {
-//       star += ' ';
-//     }
-
-//   }
-//   star += '\n';
-// }
-// console.log(star);
-
-//     *
-//    **
-//   ***
-//  ****
-// *****
-// #15. 정삼각형 출력하기
-
 let star = '';
-for (let i = 1; i < 9; i++) {
-  for (let j = 9; j > 0; j--) {
+for (let i = 1; i < 6; i++) {
+  for (let j = 5; j > 0; j--) {
     if (j <= i) {
       star += '*'
     } else {
@@ -217,11 +207,47 @@ for (let i = 1; i < 9; i++) {
 console.log(star);
 
 //     *
-//    ***
-//   *****
-//  *******
-// *********
+//    **
+//   ***
+//  ****
+// *****
+
+// #15. 정삼각형 출력하기
+
+let star = '';
+for (let i = 1; i < 6; i++) {
+  for (let j = 0; j < 4 + i; j++) {
+    if (5 - i > j) {
+      star += ' ';
+    } else {
+      star += '*';
+    }
+  }
+  star += '\n';
+}
+console.log(star);
+
+//     *  4
+//    ***  3
+//   *****  2
+//  *******  1
+// *********  0
+
 // #16. 역정삼각형 출력하기
+
+let star = '';
+for (let i = 1; i < 6; i++) {
+  for (let j = 0; j < 10 - i; j++) {
+    if (i - 1 > j) {
+      star += ' ';
+    } else {
+      star += '*';
+    }
+  }
+  star += '\n';
+}
+console.log(star);
+
 // *********
 //  *******
 //   *****
