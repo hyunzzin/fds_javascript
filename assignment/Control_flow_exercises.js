@@ -10,8 +10,7 @@ if (x > 10 && x < 20) {
   console.log(x);
 }
 
-
-// // #2. for문을 사용하여 0부터 10미만의 정수 중에서 짝수만을 작은 수부터 출력하시오.
+// #2. for문을 사용하여 0부터 10미만의 정수 중에서 짝수만을 작은 수부터 출력하시오.
 
 
 for (let i = 0; i < 10; i++) {
@@ -21,11 +20,7 @@ for (let i = 0; i < 10; i++) {
 }
 
 
-// 0
-// 2
-// 4
-// 6
-// 8
+
 // #3. for문을 사용하여 0부터 10미만의 정수 중에서 짝수만을 작은 수부터 문자열로 출력하시오.
 
 
@@ -36,7 +31,7 @@ for (let i = 0; i < 10; i++) {
 }
 
 
-// 02468
+
 
 // #4. for문을 사용하여 0부터 10미만의 정수 중에서 홀수만을 큰수부터 출력하시오.
 
@@ -46,51 +41,37 @@ for (let i = 9; i >= 0; i--) {
   }
 }
 
-// 9
-// 7
-// 5
-// 3
-// 1
 
 // #5. while문을 사용하여 0 부터 10 미만의 정수 중에서 짝수만을 작은 수부터 출력하시오.
-let i = 0;
-while (i < 10) {
-  if (i % 2 == 0) {
-    console.log(i);
+let even = 0;
+while (even < 10) {
+  if (even % 2 == 0) {
+    console.log(even);
   }
-  i = i + 1;
+  even = even + 1;
 }
 
-// 0
-// 2
-// 4
-// 6
-// 8
 
 // #6. while문을 사용하여 0 부터 10 미만의 정수 중에서 홀수만을 큰수부터 출력하시오.
 
-let i = 9;
-while (i >= 0) {
-  if (i % 2 == 1) {
-    console.log(i);
+let odd = 9;
+while (odd >= 0) {
+  if (odd % 2 == 1) {
+    console.log(odd);
   }
-  i = i - 1;
+  odd = odd - 1;
 }
 
-// 9
-// 7
-// 5
-// 3
-// 1
+
 
 // #7. for 문을 사용하여 0부터 10미만의 정수의 합을 출력하시오.
-let sum = 0;
+let intSum = 0;
 for (let i = 0; i < 10; i++) {
-  sum = sum + i;
+  intSum = intSum + i;
 }
-console.log(sum);
+console.log(intSum);
 
-// 45
+
 
 // #8. 1부터 20 미만의 정수 중에서 2 또는 3의 배수가 아닌 수의 총합을 구하시오.
 let sum = 0;
@@ -101,18 +82,18 @@ for (let i = 1; i < 20; i++) {
 }
 console.log(sum);
 
-// 73
+
 
 // #9. 1부터 20 미만의 정수 중에서 2 또는 3의 배수인 수의 총합을 구하시오.
-let sum = 0;
+let twoThreeSum = 0;
 for (let i = 1; i < 20; i++) {
   if (i % 2 === 0 || i % 3 === 0) {
-    sum = sum + i;
+    twoThreeSum = twoThreeSum + i;
   }
 }
-console.log(sum);
+console.log(twoThreeSum);
 
-// 117
+
 
 // #10. 두 개의 주사위를 던졌을 때, 눈의 합이 6이 되는 모든 경우의 수를 출력하시오.
 
@@ -124,132 +105,100 @@ for (let i = 1; i < 7; i++) {
   }
 }
 
-// [ 1, 5 ]
-// [ 2, 4 ]
-// [ 3, 3 ]
-// [ 4, 2 ]
-// [ 5, 1 ]
+
 
 // #11. 삼각형 출력하기 - pattern 1
 // 다음을 참고하여 *(별)로 높이가 5인(var line = 5) 삼각형을 문자열로 완성하라. 개행문자(‘\n’)를 사용하여 개행한다. 완성된 문자열의 마지막은 개행문자(‘\n’)로 끝나도 관계없다.
-let star = '';
+let triangleRight = '';
 for (let i = 1; i < 6; i++) {
   for (let j = 1; j <= i; j++) {
-    star += '*';
+    triangleRight += '*';
   }
-  star += '\n';
+  triangleRight += '\n';
 }
-console.log(star);
+console.log(triangleRight);
 
-// // 높이(line)가 5
-// *
-// **
-// ***
-// ****
-// *****
+
 
 // #12. 삼각형 출력하기 - pattern 2
 // 다음을 참고하여 *(별)로 트리를 문자열로 완성하라. 개행문자(‘\n’)를 사용하여 개행한다. 완성된 문자열의 마지막은 개행문자(‘\n’)로 끝나도 관계없다.
 
-let star = '';
+let triangleInvertedLeft = '';
 for (let i = 1; i < 6; i++) {
   for (let j = 1; j < 6; j++) {
     if (j >= i) {
-      star += '*'
+      triangleInvertedLeft += '*'
     } else {
-      star += ' ';
+      triangleInvertedLeft += ' ';
     }
 
   }
-  star += '\n';
+  triangleInvertedLeft += '\n';
 }
-console.log(star);
+console.log(triangleInvertedLeft);
 
-// *****
-//  ****
-//   ***
-//    **
-//     *
+
 
 // #13. 삼각형 출력하기 - pattern 3
 // 다음을 참고하여 *(별)로 트리를 문자열로 완성하라. 개행문자(‘\n’)를 사용하여 개행한다. 완성된 문자열의 마지막은 개행문자(‘\n’)로 끝나도 관계없다.
 
-let star = '';
+let triangleInvertedRight = '';
 for (let i = 1; i < 6; i++) {
   for (let j = 5; j >= i; j--) {
-    star += '*';
+    triangleInvertedRight += '*';
   }
-  star += '\n';
+  triangleInvertedRight += '\n';
 }
-console.log(star);
+console.log(triangleInvertedRight);
 
-// *****
-// ****
-// ***
-// **
-// *
+
 
 // #14. 삼각형 출력하기 - pattern 4
 // 다음을 참고하여 *(별)로 트리를 문자열로 완성하라. 개행문자(‘\n’)를 사용하여 개행한다. 완성된 문자열의 마지막은 개행문자(‘\n’)로 끝나도 관계없다.
 
-let star = '';
+let triangleLeft = '';
 for (let i = 1; i < 6; i++) {
   for (let j = 5; j > 0; j--) {
     if (j <= i) {
-      star += '*'
+      triangleLeft += '*'
     } else {
-      star += ' ';
+      triangleLeft += ' ';
     }
 
   }
-  star += '\n';
+  triangleLeft += '\n';
 }
-console.log(star);
+console.log(triangleLeft);
 
-//     *
-//    **
-//   ***
-//  ****
-// *****
+
 
 // #15. 정삼각형 출력하기
 
-let star = '';
+let equilateralTriangle = '';
 for (let i = 1; i < 6; i++) {
   for (let j = 0; j < 4 + i; j++) {
     if (5 - i > j) {
-      star += ' ';
+      equilateralTriangle += ' ';
     } else {
-      star += '*';
+      equilateralTriangle += '*';
     }
   }
-  star += '\n';
+  equilateralTriangle += '\n';
 }
-console.log(star);
+console.log(equilateralTriangle);
 
-//     *  4
-//    ***  3
-//   *****  2
-//  *******  1
-// *********  0
 
 // #16. 역정삼각형 출력하기
 
-let star = '';
+let invertedTriangle = '';
 for (let i = 1; i < 6; i++) {
   for (let j = 0; j < 10 - i; j++) {
     if (i - 1 > j) {
-      star += ' ';
+      invertedTriangle += ' ';
     } else {
-      star += '*';
+      invertedTriangle += '*';
     }
   }
-  star += '\n';
+  invertedTriangle += '\n';
 }
-console.log(star);
-
-// *********
-//  *******
-//   *****
-//    ***
-//     *
+console.log(invertedTriangle);
