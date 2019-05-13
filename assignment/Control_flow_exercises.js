@@ -14,7 +14,7 @@ if (x > 10 && x < 20) {
 
 
 for (let i = 0; i < 10; i++) {
-  if (i % 2 == 0) {
+  if (i % 2 === 0) {
     console.log(i);
   }
 }
@@ -25,7 +25,7 @@ for (let i = 0; i < 10; i++) {
 
 
 for (let i = 0; i < 10; i++) {
-  if (i % 2 == 0) {
+  if (i % 2 === 0) {
     console.log(i + '');
   }
 }
@@ -36,7 +36,7 @@ for (let i = 0; i < 10; i++) {
 // #4. for문을 사용하여 0부터 10미만의 정수 중에서 홀수만을 큰수부터 출력하시오.
 
 for (let i = 9; i >= 0; i--) {
-  if (i % 2 == 1) {
+  if (i % 2 === 1) {
     console.log(i);
   }
 }
@@ -45,7 +45,7 @@ for (let i = 9; i >= 0; i--) {
 // #5. while문을 사용하여 0 부터 10 미만의 정수 중에서 짝수만을 작은 수부터 출력하시오.
 let even = 0;
 while (even < 10) {
-  if (even % 2 == 0) {
+  if (even % 2 === 0) {
     console.log(even);
   }
   even = even + 1;
@@ -56,7 +56,7 @@ while (even < 10) {
 
 let odd = 9;
 while (odd >= 0) {
-  if (odd % 2 == 1) {
+  if (odd % 2 === 1) {
     console.log(odd);
   }
   odd = odd - 1;
@@ -99,7 +99,7 @@ console.log(twoThreeSum);
 
 for (let i = 1; i < 7; i++) {
   for (let j = 1; j < 7; j++) {
-    if (i + j == 6) {
+    if (i + j === 6) {
       console.log([i, j]);
     }
   }
