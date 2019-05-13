@@ -29,3 +29,19 @@ const empty = Object(); // 쓰지 말 것!
 
 
 const empty = new Object(); // 생성자 함수가 만들어낸 함수는 인스턴스라고 부른다.
+
+
+// 빌트인 생성자 함수(래퍼 객체)
+new String('hi'); // 표현식
+const strObj = new String('hi');
+
+Object.create(null);
+
+
+// 함수 생성
+function Person() {
+
+
+}
+Person(); // 일반 함수로 호출
+new Person(); // 생성자 함수로 호출
