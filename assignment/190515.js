@@ -69,12 +69,15 @@ console.log(getCount8()); // 4000
 
 function alphaString46(s) {
   if (isNaN(s) === false) {
-    if (s.length > 3 && s.length < 7) {
+    if (s.length >= 4 && s.length <= 6) {
       return true;
     }
   }
   return false;
 }
+
+let result = isNaN(s) === false && (s.length > 3 && s.length < 7) ? true : false;
+return result;
 
 console.log(alphaString46('1234')); // true
 console.log(alphaString46('9014')); // true
