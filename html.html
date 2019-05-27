@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DOM manipulate</title>
+  <style>
+    .red {
+      color: red;
+    }
+
+    .blue {
+      color: royalblue;
+    }
+
+    /* ui 가상 선택자 */
+    .ck:checked+span {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tbody>
+      <tr>
+        <td class="data1"></td>
+        <td class="data2">2</td>
+        <td class="data3">3</td>
+      </tr>
+      <tr>
+        <td class="data4">1</td>
+        <td class="data5">2</td>
+        <td class="data6">3</td>
+      </tr>
+      <tr>
+        <td class="data7">1</td>
+        <td class="data8">2</td>
+        <td class="data9">3</td>
+      </tr>
+    </tbody>
+
+  </table>
+  <div class="asd"></div>
+  <script>
+    // let arr = [
+    //   [1, 2, 3],
+    //   [1, 2, 3],
+    //   [1, 2, 3]
+    // ];
+    // const body = document.querySelector('.data1');
+    // console.log(arr);
+    // body.innerHTML = arr[0][0];
+    const n = [];
+    while (n.length < 9) {
+      const num = parseInt((Math.random() * 9) + 1);
+
+      if (n.indexOf(num) === -1) {
+        n.push(num);
+      }
+      // if (n.length === 9) break;
+    }
+    console.log(n);
+  </script>
+
+  <!-- <div>
+    <ul>
+      <li id="one" class="red">Seoul</li>
+      <li id="two" class="red">London</li>
+      <li id="three" class="red">Newyork</li>
+      <li id="four">Tokyo</li>
+    </ul>
+  </div> -->
+  <!-- <input type="text"> -->
+  <!-- <label> <input type="checkbox" class="ck"><span>Hello</span></label> -->
+  <!-- <script>
+    // // const elem = document.getElementById('one');
+    // const elem = document.getElementById('input[type=checkbox]');
+    // // console.log(elem);
+    // // console.log(elem.__proto__);
+    // // console.log(elem).__proto__.__proto__;
+    // // 클래스 어트리뷰트의 값을 변경한다.
+    // // elem.className = 'blue';  // 프로퍼티
+    // elem.classList.add('blue'); // 메소드
+    // elem.classList.remove('blue'); // 메소드
+
+    const elems = document.querySelector('ul');
+    console.log(elems.childNodes);
+    console.log(elems.children);
+  </script> -->
+</body>
+
+</html>
