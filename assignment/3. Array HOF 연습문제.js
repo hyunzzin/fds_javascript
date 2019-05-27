@@ -51,30 +51,30 @@ console.log(render());
 
 // 단, for 문이나 Array# forEach는 사용하지 않도록 하자.
 // map?
-// const todos = [{
-//     id: 3,
-//     content: 'HTML',
-//     completed: false
-//   },
-//   {
-//     id: 2,
-//     content: 'CSS',
-//     completed: true
-//   },
-//   {
-//     id: 1,
-//     content: 'Javascript',
-//     completed: false
-//   }
-// ];
+const todos = [{
+    id: 3,
+    content: 'HTML',
+    completed: false
+  },
+  {
+    id: 2,
+    content: 'CSS',
+    completed: true
+  },
+  {
+    id: 1,
+    content: 'Javascript',
+    completed: false
+  }
+];
 
-// function getValues(key) {
-//   return todos.map(todos => todos[key]);
-// }
+function getValues(key) {
+  return todos.map(todos => todos[key]);
+}
 
-// console.log(getValues('id')); // [3, 2, 1]
-// console.log(getValues('content')); // [ 'HTML', 'CSS', 'Javascript' ]
-// console.log(getValues('completed')); // [ false, true, false ]
+console.log(getValues('id')); // [3, 2, 1]
+console.log(getValues('content')); // [ 'HTML', 'CSS', 'Javascript' ]
+console.log(getValues('completed')); // [ false, true, false ]
 
 // #3. 프로퍼티 정렬
 
@@ -86,25 +86,25 @@ console.log(render());
 
 // slice, sort
 
-// const todos = [{
-//   id: 3,
-//   content: 'HTML',
-//   completed: false
-// }, {
-//   id: 2,
-//   content: 'CSS',
-//   completed: true
-// }, {
-//   id: 1,
-//   content: 'Javascript',
-//   completed: false
-// }];
+const todos = [{
+  id: 3,
+  content: 'HTML',
+  completed: false
+}, {
+  id: 2,
+  content: 'CSS',
+  completed: true
+}, {
+  id: 1,
+  content: 'Javascript',
+  completed: false
+}];
 
-// function sortBy(key) {
-//   return todos.sort((a, b) => a[key] > b[key] ? 1 : (a[key] < b[key] ? -1 : 0));
-// }
+function sortBy(key) {
+  return todos.sort((a, b) => a[key] > b[key] ? 1 : (a[key] < b[key] ? -1 : 0));
+}
 
-// console.log(sortBy('id'));
+console.log(sortBy('id'));
 /*
 [
   { id: 1, content: 'Javascript', completed: false },
@@ -137,34 +137,34 @@ console.log(render());
 // concat
 
 
-// let todos = [{
-//     id: 3,
-//     content: 'HTML',
-//     completed: false
-//   },
-//   {
-//     id: 2,
-//     content: 'CSS',
-//     completed: true
-//   },
-//   {
-//     id: 1,
-//     content: 'Javascript',
-//     completed: false
-//   }
-// ];
+let todos = [{
+    id: 3,
+    content: 'HTML',
+    completed: false
+  },
+  {
+    id: 2,
+    content: 'CSS',
+    completed: true
+  },
+  {
+    id: 1,
+    content: 'Javascript',
+    completed: false
+  }
+];
 
-// function addTodo(newTodo) {
-//   todos = Array.prototype.concat(newTodo, todos);
-// }
+function addTodo(newTodo) {
+  todos = Array.prototype.concat(newTodo, todos);
+}
 
-// addTodo({
-//   id: 4,
-//   content: 'Test',
-//   completed: false
-// });
+addTodo({
+  id: 4,
+  content: 'Test',
+  completed: false
+});
 
-// console.log(todos);
+console.log(todos);
 /*
 [
   { id: 4, content: 'Test', completed: false },
@@ -183,28 +183,28 @@ console.log(render());
 
 // filter
 
-// let todos = [{
-//   id: 3,
-//   content: 'HTML',
-//   completed: false
-// }, {
-//   id: 2,
-//   content: 'CSS',
-//   completed: true
-// }, {
-//   id: 1,
-//   content: 'Javascript',
-//   completed: false
-// }];
+let todos = [{
+  id: 3,
+  content: 'HTML',
+  completed: false
+}, {
+  id: 2,
+  content: 'CSS',
+  completed: true
+}, {
+  id: 1,
+  content: 'Javascript',
+  completed: false
+}];
 
-// function removeTodo(id) {
-//   todos = todos.filter(todos => todos.id !== id);
-// }
+function removeTodo(id) {
+  todos = todos.filter(todos => todos.id !== id);
+}
 
 
-// removeTodo(2);
+removeTodo(2);
 
-// console.log(todos);
+console.log(todos);
 /*
 [
   { id: 3, content: 'HTML', completed: false },
@@ -223,29 +223,29 @@ console.log(render());
 // 같은 값이 있으면 대체된다.
 // 빈 객체가 없어도 되는가?
 
-// let todos = [{
-//   id: 3,
-//   content: 'HTML',
-//   completed: false
-// }, {
-//   id: 2,
-//   content: 'CSS',
-//   completed: true
-// }, {
-//   id: 1,
-//   content: 'Javascript',
-//   completed: false
-// }];
+let todos = [{
+  id: 3,
+  content: 'HTML',
+  completed: false
+}, {
+  id: 2,
+  content: 'CSS',
+  completed: true
+}, {
+  id: 1,
+  content: 'Javascript',
+  completed: false
+}];
 
-// function toggleCompletedById(id) {
-//   todos = todos.map(item => item.id === id ? Object.assign({}, item, {
-//     completed: !item.completed
-//   }) : item);
-// }
+function toggleCompletedById(id) {
+  todos = todos.map(item => item.id === id ? Object.assign({}, item, {
+    completed: !item.completed
+  }) : item);
+}
 
-// toggleCompletedById(2);
+toggleCompletedById(2);
 
-// console.log(todos);
+console.log(todos);
 /*
 [
   { id: 3, content: 'HTML', completed: false },
@@ -261,29 +261,29 @@ console.log(render());
 // map
 
 
-// let todos = [{
-//   id: 3,
-//   content: 'HTML',
-//   completed: false
-// }, {
-//   id: 2,
-//   content: 'CSS',
-//   completed: true
-// }, {
-//   id: 1,
-//   content: 'Javascript',
-//   completed: false
-// }];
+let todos = [{
+  id: 3,
+  content: 'HTML',
+  completed: false
+}, {
+  id: 2,
+  content: 'CSS',
+  completed: true
+}, {
+  id: 1,
+  content: 'Javascript',
+  completed: false
+}];
 
-// function toggleCompletedAll() {
-//   todos = todos.map(item => Object.assign({}, item, {
-//     completed: true
-//   }));
-// }
+function toggleCompletedAll() {
+  todos = todos.map(item => Object.assign({}, item, {
+    completed: true
+  }));
+}
 
-// toggleCompletedAll();
+toggleCompletedAll();
 
-// console.log(todos);
+console.log(todos);
 /*
 [
   { id: 3, content: 'HTML', completed: true },
@@ -298,26 +298,26 @@ console.log(render());
 
 // 단, for 문, Array# forEach는 사용하지 않도록 하자.
 
-// let todos = [{
-//     id: 3,
-//     content: 'HTML',
-//     completed: false
-//   },
-//   {
-//     id: 2,
-//     content: 'CSS',
-//     completed: true
-//   },
-//   {
-//     id: 1,
-//     content: 'Javascript',
-//     completed: false
-//   }
-// ];
+let todos = [{
+    id: 3,
+    content: 'HTML',
+    completed: false
+  },
+  {
+    id: 2,
+    content: 'CSS',
+    completed: true
+  },
+  {
+    id: 1,
+    content: 'Javascript',
+    completed: false
+  }
+];
 
-// function countCompletedTodos() {
-//   return todos.filter(item => item.completed).length;
+function countCompletedTodos() {
+  return todos.filter(item => item.completed).length;
 
-// }
+}
 
-// console.log(countCompletedTodos()); // 1
+console.log(countCompletedTodos()); // 1
