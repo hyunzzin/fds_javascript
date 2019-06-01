@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todos V0-2</title>
+  <style>
+    body {
+      width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .input-todo {
+      padding-top: 30px;
+      width: 500px;
+      height: 60px;
+      font-size: 40px;
+      border: 0;
+    }
+
+    .input-todo:focus {
+      outline: none;
+    }
+
+    li {
+      text-align: left;
+      font-size: 25px;
+      list-style: none;
+    }
+
+    li input[type=checkbox] {
+      transform: scale(1.5);
+      vertical-align: middle;
+    }
+
+    .remove {
+      transform: scale(1.2);
+      vertical-align: middle;
+    }
+
+    /* input[type=checkbox]:checked + span {
+    text-decoration: line-through;
+  } */
+  </style>
+</head>
+
+<body>
+  <input class="input-todo" placeholder="What needs to be done?" autofocus>
+  <ul class="todos"></ul>
+  <script>
+    const $todos = document.querySelector('.todos');
+    const $inputTodo = document.querySelector('.input-todo');
+    let todos = [{
+        id: 1,
+        content: 'HTML',
+        completed: true
+      },
+      {
+        id: 2,
+        content: 'CSS',
+        completed: true
+      },
+      {
+        id: 3,
+        content: 'Javascript',
+        completed: false
+      }
+    ];
+
+    // 디스트럭쳐링
+    function render() {
+      let html = '';
+      todos.forEach(({
+        id,
+        content,
+        completed
+      }) => {
+        return html += `<li id="${id}">
+          <input type="checkbox" ${completed ? 'checked' : ''} <span> ${content} </span><button class="remove">X</button>
+    </li>`
+
+      });
+      $todos.innerHTML = html;
+    }
+
+    // remove가 이벤트를 발생시키면 지우고 발생시키지 않으면 그대로 둔다.
+    // ul이 발생시킨 click이벤트, button(remove 클래스를 가지고 있음), checked
+
+    function generateId() {
+      return todos.length ? Math.max(...todos.map(todo => todo.id)) + 1 : 1;
+    }
+
+    $todos.onclick = function (e) {
+      if (!e.target.classList.contains('remove')) return;
+      // 지울 것의 부모 요소가 와야 한다.
+
+      // e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+      // e.target이 todos의 자식이어야 한다는 보장이 있어야 한다.
+      // $todos.removeChild(e.target.parentNode);
+      // $todos를 this로 써도 된다.
+
+      console.log(e.target.parentNode.id);
+      todos = todos.filter(todo => todo.id !== +e.target.parentNode.id);
+      // 숫자 !== 문자 이므로 에러남
+      render();
+      // 데이터 베이스에 데이터가 안 들어갈 경우를 대비해서 render 이전에 넣는다.
+    };
+
+    // 체크박스와 radio만 change 이벤트를 발생시킨다.
+    $todos.onchange = function (e) {
+      // attribute는 true, false
+      // property는 문자열
+      console.log(e.target.checked);
+      if (e.target.checked) {
+        const id = +e.target.parentNode.id;
+        todos = todos.map(todo => todo.id === id ? Object.assign({}, todo, {
+          completed: !todo.completed
+        }) : todo);
+        render();
+      }
+    }
+
+    $inputTodo.onkeyup = function (e) {
+      // if (e.keyCode !== 13) return;
+      // ~가 아니면 return 해주는 것이 좋음
+      const content = $inputTodo.value.trim();
+      if (content === '' || e.keyCode !== 13) return;
+      $inputTodo.value = '';
+      // 새로운 할 일 추가, concat을 써도 무방
+      todos = [{
+        id: generateId(),
+        content,
+        completed: false
+      }, ...todos];
+      render();
+
+    }
+
+    render();
+  </script>
+</body>
+
+</html>

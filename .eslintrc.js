@@ -18,6 +18,7 @@ module.exports = {
             allowForLoopAfterthoughts: true
         }],
         'comma-dangle': ['error', 'never'],
-        'linebreak-style': ["off", "unix"]
+        'linebreak-style': ["off", "unix"],
+        'func-names': 0
     }
 };
