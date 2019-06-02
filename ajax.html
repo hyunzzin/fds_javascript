@@ -18,25 +18,49 @@
     }
 
     const ajax = (method, url, callback, payload) => {
-      return new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.open(method, url);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify(payload));
+      const xhr = new XMLHttpRequest();
+      xhr.open(method, url);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify(payload));
 
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status >= 200 && xhr.status <= 400) {
-              callback(xhr.response);
-            } else {
-              console.error();
-            }
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status >= 200 && xhr.status <= 400) {
+            callback(JSON.parse(xhr.response));
+          } else {
+            console.error();
           }
-        };
-      });
+        }
+      };
     };
 
-    ajax('GET', 'http://localhost:3000/todos');
+    // GET all
+    // ajax('GET', 'http://localhost:3000/todos', render);
+
+    // GET id : 1
+    // ajax('GET', 'http://localhost:3000/todos/1', render);
+
+    // POST
+    // ajax('POST', 'http://localhost:3000/todos', render, {
+    //   id: 4,
+    //   content: 'Angular',
+    //   completed: false
+    // });
+
+    // PUT
+    // ajax('PUT', 'http://localhost:3000/todos/4', render, {
+    //   id: 4,
+    //   content: 'JSON',
+    //   completed: true
+    // });
+
+    // PATCH
+    // ajax('PATCH', 'http://localhost:3000/todos/4', render, {
+    //   completed: false
+    // });
+
+    // DELETE
+    // ajax('DELETE', 'http://localhost:3000/todos/4', render);
   </script>
 </body>
 

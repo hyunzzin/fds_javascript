@@ -27,7 +27,7 @@
         xhr.onreadystatechange = function () {
           if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status >= 200 && xhr.status <= 400) {
-              resolve(xhr.response);
+              resolve(JSON.parse(xhr.response));
             } else {
               reject(xhr.status);
             }
@@ -36,12 +36,45 @@
       });
     };
 
-    // promiseAjax('DELETE', 'http://localhost:3000/todos/4', render);
-
-    promiseAjax('DELETE', 'http://localhost:3000/todos/4')
-      .then(JSON.parse)
+    // GET all
+    promiseAjax('GET', 'http://localhost:3000/todos')
       .then(render)
       .catch(console.error);
+
+    // GET id : 1
+    // promiseAjax('GET', 'http://localhost:3000/todos/1')
+    //   .then(render)
+    //   .catch(console.error);
+
+    // POST
+    // promiseAjax('POST', 'http://localhost:3000/todos', render, {
+    //     id: 4,
+    //     content: 'Angular',
+    //     completed: false
+    //   })
+    //   .then(render)
+    //   .catch(console.error);
+
+    // PUT
+    // promiseAjax('PUT', 'http://localhost:3000/todos/4', render, {
+    //     id: 4,
+    //     content: 'Promise',
+    //     completed: true
+    //   })
+    //   .then(render)
+    //   .catch(console.error);
+
+    // PATCH
+    // promiseAjax('PATCH', 'http://localhost:3000/todos/4', render, {
+    //     completed: false
+    //   })
+    //   .then(render)
+    //   .catch(console.error);
+
+    // DELETE
+    // promiseAjax('DELETE', 'http://localhost:3000/todos/4')
+    //   .then(render)
+    //   .catch(console.error);
   </script>
 </body>
 

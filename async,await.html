@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>async/await example</title>
+</head>
+
+<body>
+  <pre class="result"></pre>
+  <script>
+    const $result = document.querySelector('.result');
+    const render = todos => {
+      $result.innerHTML = JSON.stringify(todos, null, 2);
+    };
+
+    // GET all
+    // (async function () {
+    //   const res = await fetch('http://localhost:9000/todos');
+    //   const todos = await res.json();
+    //   render(todos);
+    // }());
+
+    // GET id : 3
+    // (async function () {
+    //   const res = await fetch('http://localhost:9000/todos/3');
+    //   const todos = await res.json();
+    //   render(todos);
+    // }());
+
+    // POST
+    // (async function () {
+    //   const res = await fetch('http://localhost:9000/todos', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //       id: 4,
+    //       content: 'async',
+    //       completed: false
+    //     })
+    //   });
+    //   const todos = await res.json();
+    //   render(todos);
+    // }());
+
+    // PATCH
+    // (async function () {
+    //   const res = await fetch('http://localhost:9000/todos/3', {
+    //     method: 'PATCH',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //       completed: true
+    //     })
+    //   });
+    //   const todos = await res.json();
+    //   render(todos);
+    // }());
+
+    // DELETE
+    // (async function () {
+    //   const res = await fetch('http://localhost:9000/todos/4', {
+    //     method: 'DELETE'
+    //   });
+    //   const todos = await res.json();
+    //   render(todos);
+    // }());
+  </script>
+</body>
+
+</html>
