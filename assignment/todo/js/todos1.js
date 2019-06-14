@@ -4,21 +4,9 @@ const $customCheckbox = document.querySelector('.custom-checkbox');
 const $nav = document.querySelector('.nav');
 
 // 리스트 추가하기
-let todos = [{
-    id: 1,
-    content: 'HTML',
-    completed: true
-  },
-  {
-    id: 2,
-    content: 'CSS',
-    completed: true
-  },
-  {
-    id: 3,
-    content: 'Javascript',
-    completed: false
-  }
+let todos = [{ id: 1, content: 'HTML', completed: true },
+{ id: 2, content: 'CSS', completed: true },
+{ id: 3, content: 'Javascript', completed: false }
 ];
 
 function render() {
