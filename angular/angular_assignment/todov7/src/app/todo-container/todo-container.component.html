@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="title">Todosv7</h1>
+  <div class="ver">연습</div>
+  <app-todo-form (add)="addTodo($event)">
+
+  </app-todo-form>
+  <app-todo-nav [navItem]="navItem" [navState]="navState" (changeNav)="navState = $event">
+
+  </app-todo-nav>
+  <app-todo-list [todos]="todos" [navState]="navState" (removeTodo)="removeTodo($event)"
+    (toggle)="toggleChecked($event)">
+
+  </app-todo-list>
+  <app-todo-footer (checkedAll)="checkedAll($event)" (clearCompleted)="clearCompleted()"
+    [checkedNumber]="checkedNumber()" [leftNumber]="leftNumber()" [autoEvery]="autoEvery()">
+
+  </app-todo-footer>
+</div>
+<pre>{{todos | json}}</pre>

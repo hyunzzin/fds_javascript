@@ -1,0 +1,6 @@
+<ul class="nav">
+  <li *ngFor="let navItem of navItem" id="{{navItem}}" [class.active]="navItem === navState"
+    (click)="changeNav.emit(navItem)">
+    {{navItem}}
+  </li>
+</ul>
